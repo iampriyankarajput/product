@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{options.subject}}</title>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lora', serif;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <table style="width: 750px;margin: auto;border: 1px solid #eee;">
+        <thead>
+            <tr>
+                <td class="logo" style="font-weight: 300;text-align: center;color: #fff;background-color: #09c372;padding: 15px 0;margin: 0;font-size: 30px;">
+                    Huulke CRM
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="lead-text" style="font-weight: 600;font-size: 15px;text-align:left;font-family: 'Lora', serif !important;">
+                    Hello {{fullName}},
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size: 15px;font-family: 'Lora', serif !important;">
+                    {{options.from.fullName}} has sent you message from huulke website so please see below his contact detail and message:
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size: 15px;font-family: 'Lora', serif !important;">
+                    <strong>Name:</strong> {{options.body.fullName}}
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size: 15px;font-family: 'Lora', serif !important;">
+                    <strong>Email:</strong> {{options.body.email}}
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size: 15px;font-family: 'Lora', serif !important;">
+                    <strong>Contact No.:</strong> {{options.body.mobile}}
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size: 15px;font-family: 'Lora', serif !important;">
+                    <strong>Message:</strong> {{options.body.message}}
+                </td>
+            </tr>
+        </tbody>
+        <tfoot style=" font-size: 12px;font-family: serif;">
+            <tr>
+                {{{emailFooter}}}
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

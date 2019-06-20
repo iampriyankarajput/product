@@ -1,0 +1,22 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "This is my first project",
+  "main": "server.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "sudo nodemon server.js"
+  },
+  "author": "Priyanka",
+  "license": "ISC",
+  "dependencies": {
+    "consolidate": "^0.15.1",
+    "cookie-parser": "^1.4.4",
+    "get-env": "^0.5.10",
+    "mongoose-timestamps": "0.0.1",
+    "underscore-node": "^0.1.2"
+  }
+}
