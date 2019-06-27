@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<style>
+
+body {
+  background-color: lightblue;
+}
+
+
+.button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: navy;
+  border: none;
+  border-radius: 15px;
+}
+
+</style>
+<body>
+    
+
+<form name="myForm" method="post" onsubmit="return(validate())"  action="/user">
+
+
+  <table align="center" cellpadding = "10">
+ 
+      
+      <tr>
+        <td>Full Name</td>
+        <td><input type="text" name="fullName" >
+        </td>
+      </tr>
+
+      <tr>
+        <td>User Name</td>
+        <td><input type="text" name="userName" >
+        </td>
+      </tr>
+
+      <tr>
+        <td>Email Id</td>
+        <td><input type="email" name="email" maxlength="100" /></td>
+      </tr>
+
+       <tr>
+        <td>Password</td>
+        <td><input type="password" name="password" maxlength="100" /></td>
+       </tr>
+      
+      <tr>
+        <td>Mobile Number</td>
+        <td>
+        <input type="number" name="mobile" >
+        </td>
+      </tr>
+
+       <tr>
+        <td>Date Of Birth</td>
+        <td><input type="date" name="dob" >
+        </td>
+      </tr> 
+     
+      <tr>
+        <td>Gender</td>
+        <td>
+        Male <input type="radio" name="gender" value="Male" />
+        Female <input type="radio" name="gender" value="Female" />
+        </td>
+      </tr>
+
+      <tr>
+        <td>Father Name</td>
+        <td><input type="text" name="fatherName" maxlength="100" /></td>
+      </tr>
+
+      <tr>
+        <td>Father Contact Number</td>
+        <td><input type="number" name="fatherContactNumber"  /></td>
+      </tr>
+
+      <tr>
+        <td>Pan Card Number</td>
+        <td><input type="number" name="pencardNumber"  /></td>
+      </tr>
+
+      <tr>
+        <td>PFNumber</td>
+        <td><input type="number" name="PFNumber"  /></td>
+      </tr>
+
+      <tr>
+        <td>AdharCardNumber</td>
+        <td><input type="number" name="adharcardNumber" /></td>
+      </tr>
+
+      <tr>
+        <td colspan="2" align="center">
+        <button class="button">Submit</button>
+        </td>
+      </tr>
+</table>
+</form>
+<script>
+function validate() {
+      
+      if( document.myForm.fullName.value == "" ) {
+         alert( "Please provide your name!" );
+         document.myForm.fullName.focus() ;
+         return false;
+      }
+      if( document.myForm.email.value == "" )
+        {
+        alert("Please enter correct email ID")
+        document.myForm.email.focus() ;
+        return false;
+        }
+      
+      if( document.myForm.password.value == "" ) {
+        alert( "Please provide your password!" );
+        document.myForm.password.focus() ;
+        return false;
+      }
+      
+      if( document.myForm.mobile.value == "" ||
+        isNaN( document.myForm.mobile.value) ||
+        document.myForm.mobile.value.length != 10 )
+      {
+        alert( "Please provide a Mobile No should be of 10 digits" );
+        document.myForm.mobile.focus() ;
+        return false;
+      }
+      if ( ( myForm.gender[0].checked == false ) && ( myForm.gender[1].checked == false ) )
+     {
+        alert ( "Please choose your Gender: Male or Female" );
+        return false;
+      }   
+     if( document.myForm.fatherName.value == "" ) {
+        alert( "Please provide Father name!" );
+        document.myForm.fatherName.focus() ;
+        return false;
+      }
+
+      if( document.myForm.fatherContactNumber.value == "" ||
+        isNaN( document.myForm.fatherContactNumber.value) ||
+        document.myForm.fatherContactNumber.value.length != 10 )
+      {
+        alert( "Please provide a Father contact number should be of 10 digits " );
+        document.myForm.fatherContactNumber.focus() ;
+        return false;
+      }
+      if( document.myForm.pencardNumber.value == "" ) {
+        alert( "Please provide your pancard number!" );
+        document.myForm.pencardNumber.focus() ;
+        return false;
+      }
+      return true;
+    }
+
+</script>
+
+
+
+</body>
+</html>

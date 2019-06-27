@@ -3,16 +3,21 @@ const Config = require('../config/config');
 const Jwt = require('jsonwebtoken');
 module.exports = {
     validate: function(req, res, next) {
-        var token = req.cookies.session;
+       // var token = req.cookies.session;
+       var token = req.headers.authorization; 
+       console.log(req.headers.authorization)
+       console.log(token)
         if( token ) {
             // verifies secret and checks exp
             Jwt.verify(token, Config.key.privateKey, function(err, decoded) {
                 if (err) {
+                    console.log(err)
                     return res.status(401).send({
                         success: false,
                         message: 'Failed to authenticate token'
                     });
                 } else {
+                    console.log(decoded)
                     // if everything is good, save to request for use in other routes
                     req.auth = {};
                     req.auth.credentials = decoded;

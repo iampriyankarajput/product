@@ -8,12 +8,13 @@ var mongoose = require('mongoose'),
 
 //Define User schema
 var UserSchema = new Schema({
-    fullName: { type: String, default: null },
+    userName: { type: String, required: true},
+    // fullName: { type: String, required: true},
     email: { type: String, required: true, unique: true, lowercase: true, index: true },
     password: { type: String, trim: true, required: true }, //select: false
     mobile: { type: String, default: null, index: true },
     dob: { type: Date, default: null },
-    gender: { type: String, default: 'm', enum: ['m', 'f'] },
+    gender: { type: String, default: 'Male', enum: ['Male', 'Female'] },
     fatherName: { type: String, default: null },
     fatherContactNumber: { type: String, default: null },
     pencardNumber: { type: String, default: null },

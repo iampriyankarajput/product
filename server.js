@@ -12,9 +12,9 @@ var express = require('express'),
    require('./models');
    require('./lib/database');
    require('./lib/logger').Logger;
-
+   const ProductController = require('./controllers/ProductController');
 //configuring vendor based middlewares
-app.use('/release', express.static(__dirname + '/release/'));
+app.use('/views', express.static(__dirname + '/views/'));
 app.use('/assets', express.static(__dirname + '/release/assets/'));
 app.use('/styles', express.static(__dirname + '/release/styles/'));
 app.use('/fonts', express.static(__dirname + '/release/fonts/'));
@@ -38,15 +38,41 @@ app.all('*', function (req, res, next) {    
    next();
 });
 
+
 //rendering engine
 app.set('views', './');
 app.engine('html', cons.underscore);
 app.set('view engine', 'html');
 require('./routes')(app);
 
-app.get('/', function (req, res) {    
-   res.sendFile(path.join(root, 'views/index.html'));
+app.get('/add', function (req, res) {    
+   res.sendFile(path.join(root, 'views/add.html'));
 });
+
+app.get('/products', function(req, res) {
+   res.sendFile(path.join(root, 'views/product.html'));
+   // ProductController.getProducts(req, res), function(products) {
+   //    res.render(path.join(root, 'views/productlist.html'), {products: products});
+   // };
+});
+
+app.get('/home', function (req, res) {    
+   res.sendFile(path.join(root, 'views/login1.html'));
+});
+
+app.get('/login', function (req, res) {    
+   res.sendFile(path.join(root, 'views/login2.html'));
+});
+
+app.get('/signup', function (req, res) {    
+   res.sendFile(path.join(root, 'views/signup.html'));
+});
+
+app.get('/updateprofile', function (req, res) {    
+   res.sendFile(path.join(root, 'views/profile.html'));
+});
+
+
 
 // Example error handler
 // app.use(function (err, req, res, next) {
