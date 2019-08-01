@@ -8,10 +8,11 @@ var mongoose = require('mongoose'),
 
 //Define Product schema
 var ProductSchema = new Schema({
-
-    Name:{ type: String, required: true},
-    Color:{type:String,default:null}
+    name: { type: String, required: true},
+    color: {type:String,default:null},
+    size: {type:String,default:null},
+    price:{type:String,default:null},
+    category: { type: Schema.Types.ObjectId, ref: 'Category', required: true  }
 });
-
 
 module.exports = mongoose.model('Product', ProductSchema);

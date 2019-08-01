@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="WebApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <script src="https://code.angularjs.org/1.6.9/angular.js"></script>
+    <script src="https://code.angularjs.org/1.6.9/angular-route.js"></script>
+    <script type="text/javascript" src="/assets/js/ApiMethod.js"></script>
+    <script type="text/javascript" src="/assets/js/AppController.js"></script>
+    <script type="text/javascript" src="/assets/js/Service.js"></script>
+    <script type="text/javascript" src="/assets/js/Directives.js"></script>
+    <title>Home</title>
+</head>
+<body ng-Controller="AppController">
+    <nav class="navbar navbar-inverse" >
+        <div class="container-fluid">
+            <div class="navbar-header" >
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="https://cdn3.vectorstock.com/i/1000x1000/36/52/dynamic-logo-letter-p-logo-design-template-vector-8933652.jpg" style="width:35px; height:35px;"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="platform">
+        <div class="navigation">
+            <nav-bar></nav-bar>
+        </div>
+        <div class="layout">
+            <div ng-view />
+        </div>
+    </div>
+    <!-- <footer class="container-fluid text-center">
+        <p>Online strore copyright</p>
+    </footer> -->
+    
+</body>
+
+</html>

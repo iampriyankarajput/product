@@ -7,34 +7,32 @@ const router = express.Router()
 const UserController = require('../controllers/UserController');
 const auth = require('../helpers/auth').validate;
 
-module.exports = function(app) {
-    app.get('/', function(req, res) {
-        UserController.index(req, res);
-    });
+const async = require('async');
 
 
-    app.get('/users', function(req, res) {
+module.exports = function (app) {
+    app.get('/users', function (req, res) {
         UserController.getUsers(req, res);
     });
 
-    app.post('/user', function(req, res) {
+    app.post('/user', function (req, res) {
         UserController.addUser(req, res);
     });
 
-    // app.post('/product', function(req, res) {
-    //     UserController.addProduct(req, res);
-    // });
-
-    app.post('/login', function(req, res) {
-        UserController.addLogin(req, res);
-    });
-
-    app.post('/sign', function(req, res) {
-        UserController.addSignup(req, res);
-    });
-
-    app.get('/user/profile', auth, function(req, res) {
+    app.get('/api/user/profile/', auth, function (req, res) {
         UserController.getProfile(req, res);
+    });
+
+    app.put('/api/user/profile/', auth, function (req, res) {
+        UserController.updateProfile(req, res);
+    });
+    
+    app.put('/api/changepassword', auth, function (req, res) {
+        UserController.changePassword(req, res);
+    });
+
+    app.get('/api/verify/email/:token',auth, function (req, res) {
+        UserController.verifyEmail(req, res);
     });
     
 

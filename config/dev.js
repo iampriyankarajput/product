@@ -19,6 +19,12 @@ module.exports = {
     key: {
         privateKey: 'BbZJjyoXAdr8BUZuiKKARWimKfrSmQ6fv8kZ7OFfc'
     },
+    Sendgrid: {
+        apiKey: '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',
+        from: 'Hullkers noreply@gmail.com',
+        username: 'PriyankaRajput',
+        password: 'rajput1998'
+    },
     db: {
         url: 'mongodb://localhost:27017/product-db',
         options: {

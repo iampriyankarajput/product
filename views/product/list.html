@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="WebApp">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+    .products .active {
+
+      float: right;
+    }
+
+    .table th {
+      color: wheat;
+      background-color: black;
+      border-color: wheat;
+    }
+
+    .table td {
+      font: 1em sans-serif;
+      font-size: 110%;
+      background-color: white;
+      color: rgb(96, 97, 96);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="products">
+    <h2>Products List</h2>
+    <a class="active" href="#!/platform/add" title="Add">Product Add</a>
+    <input type="text" ng-model="name" placeholder="Search by name" ng-keyup="search(name)">
+    <select ng-model="category" ng-change="searchCategory(category)">
+      <option ng-repeat="cat in categories" value="{{cat._id}}">{{cat.name}}</option>
+    </select>
+    <table class="table" border="1" height="250" width="600">
+      <tr>
+        <th>S.N.</th>
+        <th>Name</th>
+        <th>Color</th>
+        <th>Size</th>
+        <th>Price(Rs.)</th>
+        <th>Category</th>
+        <th>Actions</th>
+      </tr>
+      <tr ng-repeat="x in products">
+        <td>{{ $index+1 }}</td>
+        <td>{{ x.name }}</td>
+        <td>{{ x.color }}</td>
+        <td>{{ x.size }}</td>
+        <td>{{ x.price }}</td>
+        <td>{{ x.category.name }}</td>
+        <td>
+
+          <a href="#!/platform/edit/{{x._id}}" title="Update">Update</a>
+          <button type="button" ng-click="deleteProduct(x._id)">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</html>
+</body>

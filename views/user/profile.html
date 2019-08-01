@@ -1,0 +1,81 @@
+<div class="container emp-profile">
+    <form>
+        <div>
+            <div class="alert alert-success" ng-show="successMessage" ng-bind="successMessage"></div>
+            <div class="alert alert-danger" ng-show="errorMessage" ng-bind="errorMessage"></div>
+        </div>
+        <div class="col-md-4">
+            <div class="profile-img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"
+                    alt="" />
+                <div class="file btn btn-lg btn-primary">
+                    Change Photo
+                    <input type="file" name="file" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="profile-head">
+                <h4>
+                    Hii {{User.userName}}
+                </h4>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="/platform/#!/platform/profile"
+                            role="tab" aria-controls="home" aria-selected="true">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <a href="/platform/#!/platform/profile" class="btn btn-success" ng-click="updateProfile()">Update</a>
+        </div>
+
+        <div class="col-md-8">
+            <div class="tab-content profile-tab" id="myTabContent">
+                <div class="" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="form-horizontal">
+                        <div class="col-md-6">
+                            <label>User name:</label>
+                            <input type="text" ng-model="User.userName" class="form-control">
+                            <!-- <p>{{User.userName}}</p> -->
+                        </div>
+                    </div>
+                    <div class="form-horizontal">
+                        <div class="col-md-6">
+                            <label>Mobile number:</label>
+                            <input type="text" ng-model="User.mobile" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-horizontal">
+                        <div class="col-md-6">
+                            <label>Email:</label>
+                            <input type="text" ng-model="User.email" class="form-control" readonly>
+                        </div>
+                    </div>
+                    <div class="form-horizontal">
+                        <div class="col-md-6">
+                            <label>Gender:
+                            <input type="radio" ng-model="User.gender" ng-value="male" >Male</label>
+                            <label>
+                                    <input type="radio" ng-model="User.gender" ng-value="female">Female</label>
+                        </div>
+                    </div>
+                    <div class="form-horizontal">
+                        <div class="col-md-6">
+                            <label>Date of birth:</label>
+                            <input type="date" ng-model="User.dob" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-horizontal">
+                        <div class="col-md-6">
+                            <label>Father name:</label>
+                            <input type="text" ng-model="User.fatherName" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</form>
+</div>

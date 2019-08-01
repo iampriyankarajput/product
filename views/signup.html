@@ -1,155 +1,162 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" ng-app="SignApp">
+
 <head>
-    <style>
-    body{
-        margin:0;
-        background: #efefef;
-        font-size: 16px;
-        color: #777;
-        font-family: sans-serif;
-        font-weight: 300;
-        background-image: url("img4.jpg");
-    }
-    #login-box{
-     
-        position: relative;
-        margin: 5% auto;
-        height:400px;
-        width:1px;
-        background:#fff;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.6);
-        height:400px;
-    }
-    .left-box{
-        position:absolute;
-        top:0;
-        left:0;
-        box-sizing: border-box;
-        padding:40px;
-        width: 200px;
-        height: 400px;
-    }
-    h1{
-        margin:0;
-        font-weight: 300;
-        font-size:30px;
-        color:navy;
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script src="https://code.angularjs.org/1.6.9/angular.js"></script>
+  <script type="text/javascript" src="/assets/js/SignupController.js"></script>
+  <title>Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      /* background-image: url("views/img4.jpg");
+    */
+
     }
 
-    input[type="text"],
-    input[type="password"],
-    input[type="email"]
-    {
-        display:block;
-        box-sizing: border-box;
-        margin-bottom: 20px;
-        padding:4px;
-        width: 220px;
-        height: 32px;
-        border:none;
-        outline:none;
-        border-bottom:  1px solid #aaa;
-        font-family: sans-serif;
-        font-weight: 400;
-        font-size:15px;
-        transition:0.2s ease;
-    
+    form {
+
+      text-align: center;
+
     }
-    .button
-    {
-        margin-bottom: 28px;
-        width: 220px;
-        height: 32px; 
-        background: seagreen;
-        border:none;
-        border-radius:2px;
-        color: #fff;
-        font-family: sans-serif;
-        font-weight: 500;
-        text-transform: uppercase;
-        transition: 0.2s ease;
-        cursor:pointer;
+
+    input[type=text],
+    input[type=password],
+    input[type=email],
+    input[type=number],
+    input[type=date] {
+      color: #777;
+      padding-left: 10px;
+      margin: 10px;
+      margin-top: 12px;
+      margin-left: 18px;
+      width: 290px;
+      height: 35px;
+      border: 1px solid #c7d0d2;
+      border-radius: 2px;
+      box-shadow: inset 0 1.5px 3px rgba(190, 190, 190, .4), 0 0 0 5px #f5f7f8;
+      transition: all .4s ease;
     }
-    input[type="button"]
-    {
-        margin-bottom: 28px;
-        width: 220px;
-        height: 32px; 
-        background: red;
-        border:none;
-        border-radius:2px;
-        color: #fff;
-        font-family: sans-serif;
-        font-weight: 500;
-        text-transform: uppercase;
-        transition: 0.2s ease;
-        cursor:pointer;
+
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin-left: 50px;
+      border: none;
+      cursor: pointer;
+      width: 80px;
+      border-radius: 15px;
     }
-    .topnav {
-  overflow: hidden;
-  background-color: #808080;
-  padding:20px;
 
-}
+    button:hover {
+      opacity: 0.8;
+    }
 
-/* Style the topnav links */
-.topnav a {
-  float: right;
-  display: block;
-  color: navy;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
 
-</style>
+    .imgcontainer {
+      margin: 50px 0 15px 0;
+    }
 
+    img.avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+
+    .container {
+      position: relative;
+      width: 400px;
+      height: 530px;
+      top: 50%;
+      left: 50%;
+      margin-top: -10px;
+      margin-left: -200px;
+      background: #fff;
+      border-radius: 3px;
+      border: 1px solid rgb(44, 44, 44)b;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+
+    }
+
+    input[type=checkbox] {
+      margin-left: 20px;
+      margin-top: 20px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .red-text {
+      color: red;
+    }
+
+    .errormessage {
+      background-color: red;
+      padding: 10px;
+      color: #fff;
+    }
+
+    .successmessage {
+      background-color: green;
+      padding: 10px;
+      color: #fff;
+    }
+  </style>
 </head>
 
-<body>
-        <div class="topnav">
-                <img src="img3.jpg" height="50" width="80">
-              <a href="#">Signup</a>
-              <a href="#">Login</a>
-            </div>
-
-    <form name="myForm" method="post" onsubmit="return(validate())"  action="/sign">
-    <div id="login-box">
-        <div class="left-box">
-            <h1>Sign up</h1>
-            <input type="text" name="userName" placeholder="userName">
-            <input type="email" name="email" placeholder="email">
-            <input type="password" name="password" placeholder="password">
-            <button class="button" type="submit">Sign Up</button>
-            <input type="button"  value="Cancel" onclick="cancel()">
-        </div>
+<body ng-controller="SignupController">
+  <form name="myform" method="POST" novalidate>
+    <div class="imgcontainer">
+      <img src="/assets/images/img6.png" alt="Avatar" class="avatar">
     </div>
-    </form>
-    <script>
-        function validate() {
-            if( document.myForm.userName.value == "" ) {
-         alert( "Please provide your name!" );
-         document.myForm.fullName.focus() ;
-         return false;
-      }
-      if( document.myForm.email.value == "" )
-        {
-        alert("Please enter correct email ID")
-        document.myForm.email.focus() ;
-        return false;
-        }
-      
-      if( document.myForm.password.value == "" ) {
-        alert( "Please provide your password!" );
-        document.myForm.password.focus() ;
-        return false;
-      }
-    }
-    function cancel(){
-  window.location='/views/login1.html'
-    }
-     
-    </script>
+
+    <div class="container">
+      <h2>Signup</h2>
+      <div class="errormessage" ng-show="signErrorMsg" ng-bind="signErrorMsg"></div>
+      <div class="successmessage" ng-show="signSuccessMsg" ng-bind="signSuccessMsg"></div>
+      <input type="text" placeholder="Enter username" name="userName" ng-model="User.userName" ng-required="true">
+      <span class="red-text" ng-if="myform.userName.$error.required && myform.userName.$dirty">Username is a required
+        field</span>
+
+      <input type="email" placeholder="Enter email" name="email" ng-model="User.email"
+        ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" ng-required="true">
+      <span class="red-text" ng-if="myform.email.$error.required && myform.email.$dirty">Email is a required
+        field</span>
+      <span class="red-text" ng-show="myform.email.$error.pattern">Invalid Email</span>
+
+      <input type="text" placeholder="Enter mobileNo" name="mobile" ng-model="User.mobile" ng-pattern="/^\+?\d{10}$/"
+        ng-required="true">
+      <span class="red-text" ng-if="myform.mobile.$error.required && myform.mobile.$dirty">Mobile number is a required
+        field</span>
+      <span class="red-text" ng-show="myform.mobile.$error.pattern">Please enter a 10 digit number</span>
+<br>
+      <label>Gender:
+        <input type="radio" placeholder="Enter Gender" name="gender" ng-model="User.gender" ng-value="male" ng-required="true">Male
+      </label>
+      <label>
+          <input type="radio" placeholder="Enter Gender" name="gender" ng-model="User.gender" ng-value="female" ng-required="true">Female
+        </label>
+      <!-- <input type="text" placeholder="Enter Gender" name="gender" ng-model="User.gender" ng-required="true">
+      <span class="red-text" ng-if="myform.gender.$error.required && myform.gender.$dirty">Gender is a required
+        field</span> -->
+
+<br>
+      <input type="date" placeholder="Enter Date" name="dob" ng-model="User.dob" ng-required="true">
+      <span class="red-text" ng-if="myform.dob.$error.required && myform.dob.$dirty">DOB is a required field</span>
+      <input type="password" placeholder="Enter password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+        required ng-model="User.password" ng-required="true">
+      <span class="red-text" ng-if="myform.password.$error.required && myform.password.$dirty">Password is a required
+        field</span>
+      <button type="submit" ng-click="sign(User)">Signup</button>
+      Already registered?<a href="/login">Login</a>
+    </div>
+  </form>
 </body>
+
 </html>

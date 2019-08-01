@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="WebApp">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+    .table th {
+      color: wheat;
+      background-color: black;
+      border-color: wheat;
+    }
+
+    .table td {
+      font: 1em sans-serif;
+      font-size: 110%;
+      background-color: white;
+      color: rgb(96, 97, 96);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="categories">
+    <h2> Category List </h2>
+    <a class="active" href="#!/platform/categoryadd" title="Add">Category Add</a>
+    <table class="table" border="1">
+      <tr>
+        <th>S.N.</th>
+        <th>Name</th>
+        <th>Actions</th>
+      </tr>
+      <tr ng-repeat="x in category">
+        <td>{{ $index+1 }}</td>
+        <td>{{ x.name }}</td>
+        <td>
+
+          <a href="#!/platform/update/{{x._id}}" title="Update">Update</a>
+          <button type="button" ng-click="deleteCategory(x._id)">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+</html>

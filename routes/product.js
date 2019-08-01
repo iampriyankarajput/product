@@ -8,23 +8,23 @@ const ProductController = require('../controllers/ProductController');
 const auth = require('../helpers/auth').validate;
 
 module.exports = function(app) {
-    app.get('/product', auth,function(req, res) {
+    app.get('/api/product', auth, function(req, res) {
         ProductController.getProducts(req, res);
     });
 
-    app.post('/product',function(req, res){
-        ProductController.addProduct(req, res);             // Create a new Product
+    app.post('/api/product', auth, function(req, res) {
+        ProductController.addProduct(req, res);
     });
 
-    app.get('/product',auth,function(req, res){
-        ProductController.getProduct(req, res);   
+    app.get('/api/product/:id', auth, function(req, res) {
+        ProductController.getProductDetail(req, res);   
     });
 
-    app.put('/updateproduct',auth,function(req, res){
+    app.put('/api/product/:id', auth, function(req, res) {
         ProductController.updateProduct(req, res);   
     });
 
-    app.delete('/deleteproduct',auth,function(req, res){
+    app.delete('/api/product/:id', auth, function(req, res) {
         ProductController.deleteProduct(req, res);   
     });
 }

@@ -1,0 +1,13 @@
+<section class="layout-container">
+    <form name="categoryForm">
+        <div>
+            <div class="alert alert-success" ng-show="successMessage" ng-bind="successMessage"></div>
+            <div class="alert alert-danger" ng-show="errorMessage" ng-bind="errorMessage"></div>
+        </div>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" ng-model="Category.name" class="form-control" />
+        </div>
+        <button type="button" ng-click="updateCategory()" class="btn btn-success" ng-disabled="requestSent">Update</button>
+    </form>
+</section>

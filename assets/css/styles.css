@@ -1,0 +1,271 @@
+body{
+    font-family: "Lato", sans-serif;
+    /* background-image: url("/assets/images/img4.jpg"); */
+}
+.navigation {
+    width: 200px;
+    float: left;
+    min-height: 500px;
+    border-right: 2px solid #eee;
+}
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+.row.content {
+    height: 450px;
+}
+.sidenav a {
+    color: black;
+    padding: 6px 6px 6px 20px;
+    font-size: 15px;
+    display: block;
+    text-decoration: none;
+}
+
+.row content {
+    background-color: aliceblue;
+}
+footer {
+    background-color: rgb(71, 70, 70);
+    padding: 25px;
+    color:white;
+}
+.layout {
+    margin-left: 220px;
+    padding: 0 10px;
+}
+.layout-container {
+    padding-top: 20px;
+}
+.btn-success{
+    margin-top:15px; 
+}
+.emp-profile {
+    padding: 3%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-radius: 0.5rem;
+    background: #fff;
+    width: 90%;
+}
+
+.profile-img {
+    text-align: center;
+}
+
+.profile-img img {
+    width: 70%;
+    height: 100%;
+}
+
+.profile-img .file {
+    position: relative;
+    overflow: hidden;
+    margin-top: -20%;
+    width: 70%;
+    border: none;
+    border-radius: 0;
+    font-size: 15px;
+    background: #212529b8;
+}
+
+.profile-img .file input {
+    position: absolute;
+    opacity: 0;
+    right: 0;
+    top: 0;
+}
+
+.profile-head h5 {
+    color: #333;
+}
+
+.profile-head h4 {
+    color: #0062cc;
+}
+
+.profile-edit-btn {
+    border: none;
+    border-radius: 1.5rem;
+    width: 70%;
+    padding: 2%;
+    font-weight: 600;
+    color: #6c757d;
+    cursor: pointer;
+}
+
+.profile-head .nav-tabs {
+    margin-bottom: 5%;
+}
+
+.profile-head .nav-tabs .nav-link {
+    font-weight: 600;
+    border: none;
+}
+
+.profile-head .nav-tabs .nav-link.active {
+    border: none;
+    border-bottom: 2px solid #0062cc;
+}
+
+.profile-tab label {
+    font-weight: 600;
+}
+
+.profile-tab input[type=text],
+input[type=date] {
+    font: 1em sans-serif;
+    width: 100%;
+    color: #0062cc;
+    margin-right: 20px;
+
+}
+
+.profile-tab p {
+    font-weight: 600;
+    color: #0062cc;
+}
+
+.btn {
+    background-color: rgb(77, 201, 77);
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 25px;
+}
+
+.control-label {
+    margin-left: 50px;
+}
+/* style for product list */
+button:hover {
+    color: black;
+  }
+  .products input[type=text]{
+    font: 1em sans-serif;
+    float: left;
+    width: 30%;
+   background-color: wheat;
+    margin-top: 6px;
+    padding:10px;
+    border-radius: 25px;
+  }
+  .products select{
+    font: 1em sans-serif;
+    float: left;
+    width: 30%;
+    margin:6px 0px 0px 20px;
+   background-color: wheat;
+    padding:10px;
+    border-radius: 25px;
+  }
+.products table {
+    border-collapse: collapse;
+    width: 120%;
+  }
+
+.products table,th {
+    border: 1px solid black;
+    height: 50px;
+}
+.products a{
+    color: rgb(54, 49, 49);
+    margin:5px 15px 25px 30px;
+    padding:10px;
+    font: 1em sans-serif;
+    text-decoration: none; 
+}
+/* style for category list */
+.categories table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.categories table,th {
+    border: 1px solid black;
+    height: 50px;
+    
+}
+
+.categories .active {
+    font: 1em sans-serif;
+    float: right;
+    margin:0px 30px 50px 60px;
+}
+.categories a{
+    color: rgb(54, 49, 49);
+    margin:5px 15px 25px 30px;
+    padding:10px;
+    font: 1em sans-serif;
+    text-decoration: none; 
+}
+/* style for profile page */
+
+.user input[type=text]{
+    font: 1em sans-serif;
+    float: left;
+    width: 80%;
+    color: rgb(49, 49, 49);
+    background-color: wheat;
+    margin-top: 6px;
+    padding:15px;
+    border-radius: 25px;
+}
+.user td{
+    font-size: 150%;
+    color: rgb(47, 48, 47);
+ 
+}
+.user h2{
+    font-family: verdana;
+    font-size: 200%;
+}
+.user a{
+    background-color: rgb(77, 201, 77);
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 25px;
+}
+/* style for password page */
+.password input[type=password]{
+    font: 1em sans-serif;
+    float: left;
+    width: 100%;
+    margin-top: 6px;
+    padding:15px;
+    background-color: wheat;
+    border-radius: 25px;
+}
+.password td{
+    font: 1em sans-serif;
+    font-size: 150%;
+}
+.password h2{
+    font-family: verdana;
+    font-size: 200%;
+}
+.password a{
+    background-color: rgb(77, 201, 77);
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 25px;
+}
+.errormessage {
+    background-color: red;
+    padding: 10px;
+    color: #fff;
+}
+.successmessage {
+    background-color: green;
+    padding: 10px;
+    color: #fff;
+}
+

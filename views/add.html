@@ -29,14 +29,8 @@ body {
 <form name="myForm" method="post" onsubmit="return(validate())"  action="/user">
 
 
-  <table align="center" cellpadding = "10">
+  <table class="table" align="center" cellpadding = "10">
  
-      
-      <tr>
-        <td>Full Name</td>
-        <td><input type="text" name="fullName" >
-        </td>
-      </tr>
 
       <tr>
         <td>User Name</td>
@@ -51,7 +45,8 @@ body {
 
        <tr>
         <td>Password</td>
-        <td><input type="password" name="password" maxlength="100" /></td>
+        <td><input type="password" name="password" maxlength="100"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required> </td>
        </tr>
       
       <tr>
@@ -109,12 +104,7 @@ body {
 </form>
 <script>
 function validate() {
-      
-      if( document.myForm.fullName.value == "" ) {
-         alert( "Please provide your name!" );
-         document.myForm.fullName.focus() ;
-         return false;
-      }
+
       if( document.myForm.email.value == "" )
         {
         alert("Please enter correct email ID")
